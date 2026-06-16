@@ -1,0 +1,272 @@
+/* Global Styles - Portfolio Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+
+/* ============ Theme Variables ============ */
+:root,
+[data-theme="dark"] {
+  --bg-primary: #0a0f1c;
+  --bg-secondary: #111827;
+  --bg-card: rgba(40, 52, 71, 0.75);
+  --bg-card-hover: rgba(58, 72, 92, 0.85);
+  --bg-nav: rgba(10, 15, 28, 0.85);
+  --bg-nav-mobile: rgba(10, 15, 28, 0.98);
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-heading: #f1f5f9;
+
+  --accent-primary: #6366f1;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #3b82f6;
+  --accent-light: #818cf8;
+  --accent-text: #a5b4fc;
+  --accent-bg: rgba(99, 102, 241, 0.08);
+  --accent-border: rgba(99, 102, 241, 0.2);
+  --accent-glow: rgba(99, 102, 241, 0.04);
+
+  --border-color: rgba(99, 102, 241, 0.25);
+  --border-subtle: rgba(99, 102, 241, 0.18);
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 4px 15px rgba(99, 102, 241, 0.4);
+
+  --scrollbar-track: #0a0f1c;
+  --scrollbar-thumb: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  --scrollbar-thumb-hover: linear-gradient(to bottom, #818cf8, #a78bfa);
+
+  --selection-bg: rgba(99, 102, 241, 0.3);
+  --selection-color: #f1f5f9;
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(99, 102, 241, 0.3);
+
+  --badge-bg: rgba(15, 23, 42, 0.9);
+  --avatar-bg: linear-gradient(135deg, #1e1b4b, #312e81);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-nav: rgba(255, 255, 255, 0.9);
+  --bg-nav-mobile: rgba(255, 255, 255, 0.98);
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-heading: #0f172a;
+
+  --accent-primary: #4f46e5;
+  --accent-secondary: #7c3aed;
+  --accent-tertiary: #2563eb;
+  --accent-light: #6366f1;
+  --accent-text: #4338ca;
+  --accent-bg: rgba(79, 70, 229, 0.06);
+  --accent-border: rgba(79, 70, 229, 0.2);
+  --accent-glow: rgba(79, 70, 229, 0.03);
+
+  --border-color: rgba(79, 70, 229, 0.12);
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-accent: 0 4px 15px rgba(79, 70, 229, 0.25);
+
+  --scrollbar-track: #f8fafc;
+  --scrollbar-thumb: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  --scrollbar-thumb-hover: linear-gradient(to bottom, #4f46e5, #7c3aed);
+
+  --selection-bg: rgba(79, 70, 229, 0.2);
+  --selection-color: #1e293b;
+
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(79, 70, 229, 0.2);
+
+  --badge-bg: rgba(255, 255, 255, 0.95);
+  --avatar-bg: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+}
+
+/* ============ Base Styles ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* Fluid base font: scales between 14px (320px viewport) and 16px (1200px viewport) */
+  font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Responsive container utility */
+section {
+  position: relative;
+  width: 100%;
+  padding-left: clamp(0.75rem, 2vw, 3rem);
+  padding-right: clamp(0.75rem, 2vw, 3rem);
+}
+
+/* Ambient background glow effects */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, var(--accent-glow) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+  z-index: -1;
+  animation: ambientShift 20s ease-in-out infinite alternate;
+}
+
+[data-theme="light"] body::before {
+  background: radial-gradient(circle at 20% 50%, rgba(79, 70, 229, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.02) 0%, transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+}
+
+@keyframes ambientShift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-2%, -2%) rotate(2deg); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: var(--text-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Section dividers */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 600px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+section:first-of-type::before {
+  display: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #818cf8, #a78bfa);
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-color);
+}
+
+/* Utility animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============ Card Glow Effect ============ */
+@keyframes cardGlowShift {
+  0% { opacity: 0.4; transform: rotate(0deg) scale(1); }
+  50% { opacity: 0.7; transform: rotate(180deg) scale(1.05); }
+  100% { opacity: 0.4; transform: rotate(360deg) scale(1); }
+}
+
+@keyframes borderGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ============ Large Screen Scaling ============ */
+@media (min-width: 1600px) {
+  html {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
