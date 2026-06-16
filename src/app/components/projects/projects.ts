@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * ProjectsComponent showcases internships and project work
+ * with role details and key accomplishments.
+ */
 @Component({
   selector: 'app-projects',
   standalone: true,

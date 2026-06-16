@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+
 import { HeaderComponent } from './components/header/header';
 import { HeroComponent } from './components/hero/hero';
 import { AboutComponent } from './components/about/about';
@@ -10,6 +11,10 @@ import { ContactComponent } from './components/contact/contact';
 import { FooterComponent } from './components/footer/footer';
 import { ThemeService } from './services/theme.service';
 
+/**
+ * Root application component.
+ * Composes the portfolio layout by orchestrating all section components.
+ */
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -46,6 +51,5 @@ import { ThemeService } from './services/theme.service';
   ],
 })
 export class App {
-  // Inject ThemeService to ensure it initializes on app start
-  private themeService = inject(ThemeService);
+  private readonly themeService = inject(ThemeService);
 }

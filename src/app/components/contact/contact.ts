@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * ContactComponent provides multiple contact methods
+ * (email, phone, LinkedIn, location) in a responsive card grid.
+ */
 @Component({
   selector: 'app-contact',
   standalone: true,

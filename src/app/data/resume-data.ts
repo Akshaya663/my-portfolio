@@ -1,5 +1,9 @@
 import { ResumeData } from '../models/resume.model';
 
+/**
+ * Static portfolio/resume data used across all sections.
+ * Centralized here for easy maintenance and potential future CMS integration.
+ */
 export const RESUME_DATA: ResumeData = {
   personal: {
     name: 'Akshaya Rachabattula',

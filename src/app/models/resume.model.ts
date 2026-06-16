@@ -1,3 +1,8 @@
+/**
+ * Application-wide type definitions for the portfolio resume data.
+ * These interfaces enforce type safety across all components that consume resume data.
+ */
+
 export interface PersonalInfo {
   name: string;
   title: string;

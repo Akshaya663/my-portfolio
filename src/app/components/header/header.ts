@@ -1,6 +1,13 @@
 import { Component, HostListener, inject } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 
+/**
+ * HeaderComponent provides the main navigation bar with:
+ * - Desktop nav links with smooth scroll anchors
+ * - Mobile hamburger menu with slide-down animation
+ * - Dark/Light mode toggle button
+ * - Scroll-triggered background blur effect
+ */
 @Component({
   selector: 'app-header',
   standalone: true,

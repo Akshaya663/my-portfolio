@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * ExperienceComponent renders the professional work history
+ * in a vertical timeline layout with expandable highlight details.
+ */
 @Component({
   selector: 'app-experience',
   standalone: true,

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
 @Component({

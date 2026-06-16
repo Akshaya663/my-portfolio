@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * AboutComponent displays the personal summary, core strengths,
+ * and quick-info cards (location, experience, education, languages).
+ */
 @Component({
   selector: 'app-about',
   standalone: true,

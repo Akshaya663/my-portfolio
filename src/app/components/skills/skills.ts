@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * SkillsComponent displays technical skills organized by category
+ * in a responsive grid with animated card effects.
+ */
 @Component({
   selector: 'app-skills',
   standalone: true,

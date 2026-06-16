@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { RESUME_DATA } from '../../data/resume-data';
 
+/**
+ * EducationComponent displays academic background
+ * with institution, degree, and performance details.
+ */
 @Component({
   selector: 'app-education',
   standalone: true,

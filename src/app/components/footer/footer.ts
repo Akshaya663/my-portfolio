@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * FooterComponent displays attribution and copyright information.
+ */
 @Component({
   selector: 'app-footer',
   standalone: true,
